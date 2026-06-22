@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>特殊選才是否仍足夠特殊？非典型升學路下的挑戰</title>
+    <style>
+        :root {
+            --primary: #2b5876;
+            --secondary: #4e4376;
+            --accent: #ff6b6b;
+            --bg: #f8f9fa;
+            --text: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        /* 視覺大頭（Hero Section） */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* 引言與前言 */
+        .intro-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            border-left: 5px solid var(--accent);
+        }
+
+        /* 互動式階段切換（融媒體核心） */
+        .interactive-section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .tab-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            color: #666;
+            font-weight: 600;
+            transition: all 0.3s;
+            position: relative;
+            bottom: -2px;
+        }
+
+        .tab-btn.active {
+            color: var(--accent);
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .content-panel {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .content-panel.active {
+            display: block;
+        }
+
+        /* 模擬卡片 */
+        .quote-card {
+            background: #f0f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-right: 4px dashed #cbd5e1;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-weight: bold;
+            color: var(--secondary);
+            margin-top: 10px;
+        }
+
+        /* 數據視覺化模擬圖表 */
+        .chart-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+
+        .bar-container {
+            margin-top: 20px;
+        }
+
+        .bar-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .bar-label {
+            width: 80px;
+            font-weight: bold;
+        }
+
+        .bar-wrapper {
+            flex-grow: 1;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 0 15px;
+        }
+
+        .bar-fill {
+            height: 25px;
+            background: linear-gradient(90deg, #4e4376, #2b5876);
+            width: 0;
+            transition: width 1.5s ease-in-out;
+            color: white;
+            text-align: right;
+            padding-right: 10px;
+            font-size: 0.85rem;
+            line-height: 25px;
+        }
+
+        /* 結論行動呼籲 */
+        .footer-summary {
+            background: #212529;
+            color: #f8f9fa;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 響應式手機版優化 */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8rem; }
+            .tab-container { flex-direction: column; align-items: center; }
+            .tab-btn { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 視覺大頭 -->
+    <header class="hero">
+        <h1>特殊選才是否仍足夠特殊？</h1>
+        <p>打破分數體制、為非典型奇才開闢的捷徑，為何成為一場資訊不對稱的「人生豪賭」？</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- 引言 -->
+        <section class="intro-box">
+            <p><strong>【前言】</strong>自2015年試辦以來，特殊選才（特選）名額逐年增加，預計在2026或2027年將達到總招生名額的3%。然而，這條免看學測成績的升學路，背後卻隱藏著多元制度下的重重挑戰。本文將帶您透過互動，親自體驗特選生在不同階段面臨的真實困境。</p>
+        </section>
+
+        <!-- 數據視覺化 -->
+        <section class="chart-box">
+            <h2 class="section-title">數據看趨勢：擴增的名額與競爭</h2>
+            <p style="text-align: center; color: #666; font-size: 0.9rem;">特殊選才招生名額逐年攀升（2026年占總名額約2.5%）</p>
+            <div class="bar-container">
+                <div class="bar-row">
+                    <span class="bar-label">2015年</span>
+                    <div class="bar-wrapper"><div class="bar-fill" data-width="10%">試辦初試</div></div>
+                    <span>53人</span>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">2018年</span>
+                    <div class="bar-wrapper"><div class="bar-fill" data-width="35%">納入正式</div></div>
+                    <span>555人</span>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">2025年</span>
+                    <div class="bar-wrapper"><div class="bar-fill" data-width="85%">大幅成長</div></div>
+                    <span>2156人</span>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">2026年</span>
+                    <div class="bar-wrapper"><div class="bar-fill" data-width="100%">最新數據</div></div>
+                    <span>2453人</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 融媒體互動核心：階段困境切換 -->
+        <section class="interactive-section">
+            <h2 class="section-title">點擊切換：體驗特選生的「生存挑戰」</h2>
+            
+            <div class="tab-container">
+                <button class="tab-btn active" onclick="switchTab(event, 'phase1')">階段一：考前準備與豪賭</button>
+                <button class="tab-btn" onclick="switchTab(event, 'phase2')">階段二：評選模糊與落差</button>
+                <button class="tab-btn" onclick="switchTab(event, 'phase3')">階段三：入學後的適應期</button>
+            </div>
+
+            <!-- 階段一內容 -->
+            <div id="phase1" class="content-panel active">
+                <h3>🔍 像賭博一樣的方向：資訊落差與全押風險</h3>
+                <p style="margin-top: 10px;">特殊選才通常在高中 10、11 月進行，由於沒有統一的學科標準，高中端也常因「升學讀書導向」而缺乏資源協助。學生必須在毫無範圍的狀態下自行摸索，甚至面临「All in 落榜」後，只剩不到三個月就要回頭硬考學測的極大精神壓力。</p>
+                <div class="quote-card">
+                    <p>「沒有一個一定的標準，所以你要準備起來的話，就沒什麼方向，很像賭博的感覺。」</p>
+                    <div class="quote-author">—— 黃暘（陽明交大傳播與科技學系畢業生）</div>
+                </div>
+            </div>
+
+            <!-- 階段二內容 -->
+            <div id="phase2" class="content-panel">
+                <h3>⚖️ 什麼是特殊？大學端的篩選焦慮</h3>
+                <p style="margin-top: 10px;">由於書審資料主觀性高，大學端常面臨「選進來的學生沒那麼特殊」、「備審資料不誠實」的信任危機。甚至出現經歷更豐富的學生落榜，評選標準模糊，導致學生必須仰賴校外補習班包裝或尋求民間「長浪計畫」等組織才能弭平校系想像的落差。</p>
+                <div class="quote-card">
+                    <p>「我們前一兩年遇到很大的困擾，就是我們覺得選進來的學生並沒有那麼特殊... 學生的資料不誠實，我們覺得被騙了。」</p>
+                    <div class="quote-author">—— 蘇文鈺（國立成功大學資訊工程學系教授）</div>
+                </div>
+            </div>
+
+            <!-- 階段三內容 -->
+            <div id="phase3" class="content-panel">
+                <h3>🎓 大好或大壞：進入頂大後的課業陣痛</h3>
+                <p style="margin-top: 10px;">沒經過學測篩選的特選生，入學後常在理論、微積分、英文授課等傳統學科「嚴重偏科」而極度痛苦。此外，雖然校內有學習諮詢，但行政人員常不了解特選生擁有的法規特殊限制，給予錯誤建議，讓學生在校園中感到孤立無援。</p>
+                <div class="quote-card">
+                    <p>「特選生入學後只有兩種狀況，不是大好就是大壞，幾乎沒有中間值。」</p>
+                    <div class="quote-author">—— 連珮妤（臺灣大學生物產業傳播暨發展學系特選生）</div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 大學改制方案 -->
+        <section class="intro-box" style="border-left: 5px solid var(--primary); background: #f1f5f9;">
+            <h3>🛠️ 尋求出路：制度如何延續「特殊」？</h3>
+            <p style="margin-top: 10px;">面對挑戰，部分頂大科系主動做出變革。例如<b>成大資工系</b>歷經4次改制，取消主觀面試，改採 80% 的上機考試篩選真正具備軟體實作熱忱的學生。並在入學後提供「紙筆」與「上機」雙軌評鑑、配備專門輔導老師，避免讓特殊人才在傳統評分體制下再次被埋沒。</p>
+        </section>
+
+    </div>
+
+    <!-- 頁尾 -->
+    <footer class="footer-summary">
+        <p>內容來源：國立政治大學《大學報》第1823期專題報導</p>
+        <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 10px;">融媒體專題網頁互動原型設計 2026</p>
+    </footer>
+
+    <!-- 互動指令指令碼 -->
+    <script>
+        // 頁籤切換功能
+        function switchTab(evt, phaseId) {
+            const panels = document.querySelectorAll('.content-panel');
+            const tabs = document.querySelectorAll('.tab-btn');
+            
+            panels.forEach(panel => panel.classList.remove('active'));
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            document.getElementById(phaseId).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+
+        // 動畫化長條圖（當網頁載入時觸發）
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const bars = document.querySelectorAll('.bar-fill');
+                bars.forEach(bar => {
+                    const width = bar.getAttribute('data-width');
+                    bar.style.width = width;
+                });
+            }, 300);
+        });
+    </script>
+</body>
+</html>
