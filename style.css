@@ -1,0 +1,192 @@
+:root {
+    --primary: #2b5876;
+    --secondary: #4e4376;
+    --accent: #ff6b6b;
+    --bg: #f8f9fa;
+    --text: #333333;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+}
+
+/* 視覺大頭（Hero Section） */
+.hero {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* 引言與前言 */
+.intro-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+    border-left: 5px solid var(--accent);
+}
+
+/* 互動式階段切換 */
+.interactive-section {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.tab-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #eee;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: #666;
+    font-weight: 600;
+    transition: all 0.3s;
+    position: relative;
+    bottom: -2px;
+}
+
+.tab-btn.active {
+    color: var(--accent);
+    border-bottom: 3px solid var(--accent);
+}
+
+.content-panel {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.content-panel.active {
+    display: block;
+}
+
+/* 模擬卡片 */
+.quote-card {
+    background: #f0f4f8;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border-right: 4px dashed #cbd5e1;
+}
+
+.quote-author {
+    text-align: right;
+    font-weight: bold;
+    color: var(--secondary);
+    margin-top: 10px;
+}
+
+/* 數據視覺化模擬圖表 */
+.chart-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+}
+
+.bar-container {
+    margin-top: 20px;
+}
+
+.bar-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.bar-label {
+    width: 80px;
+    font-weight: bold;
+}
+
+.bar-wrapper {
+    flex-grow: 1;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0 15px;
+}
+
+.bar-fill {
+    height: 25px;
+    background: linear-gradient(90deg, #4e4376, #2b5876);
+    width: 0;
+    transition: width 1.5s ease-in-out;
+    color: white;
+    text-align: right;
+    padding-right: 10px;
+    font-size: 0.85rem;
+    line-height: 25px;
+}
+
+/* 結論行動呼籲 */
+.footer-summary {
+    background: #212529;
+    color: #f8f9fa;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 響應式手機版優化 */
+@media (max-width: 600px) {
+    .hero h1 { font-size: 1.8rem; }
+    .tab-container { flex-direction: column; align-items: center; }
+    .tab-btn { width: 100%; text-align: center; }
+}
